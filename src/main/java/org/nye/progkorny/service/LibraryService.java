@@ -16,12 +16,17 @@ public class LibraryService implements ILibraryService {
     private ILibraryRepository libraryRepository;
 
     @Override
+    public List<BookEntity> getAllBooks() {
+        return (List<BookEntity>) libraryRepository.findAll();
+    }
+
+    @Override
     public BookEntity saveBook(BookRequest bookRequest) {
         BookEntity bookEntity = BookEntity.builder()
                 .author(bookRequest.getAuthor())
                 .title(bookRequest.getTitle())
                 .pages(bookRequest.getPages())
-                .year(bookRequest.getYear())
+                .publicationYear(bookRequest.getPublicationYear())
                 .coverUrl(bookRequest.getCoverUrl())
                 .genre(bookRequest.getGenre())
                 .isOwned(bookRequest.getIsOwned())
@@ -42,7 +47,7 @@ public class LibraryService implements ILibraryService {
         bookEntity.setAuthor(bookRequest.getAuthor());
         bookEntity.setTitle(bookRequest.getTitle());
         bookEntity.setPages(bookRequest.getPages());
-        bookEntity.setYear(bookRequest.getYear());
+        bookEntity.setPublicationYear(bookRequest.getPublicationYear());
         bookEntity.setCoverUrl(bookRequest.getCoverUrl());
         bookEntity.setGenre(bookRequest.getGenre());
         bookEntity.setIsOwned(bookRequest.getIsOwned());
@@ -59,8 +64,8 @@ public class LibraryService implements ILibraryService {
         return libraryRepository.findAllByAuthor(author);
     }
     @Override
-    public List<BookEntity> findAllByYear(int year) {
-        return libraryRepository.findAllByYear(year);
+    public List<BookEntity> findAllByYear(int publicationYear) {
+        return libraryRepository.findAllByPublicationYear(publicationYear);
     }
 
     @Override

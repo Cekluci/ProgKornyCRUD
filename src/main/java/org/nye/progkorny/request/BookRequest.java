@@ -21,11 +21,12 @@ public class BookRequest {
     private int pages;
 
     @PositiveOrZero
-    private int year;
+    private int publicationYear;
 
     private String coverUrl;
 
     private String genre;
 
     private Boolean isOwned;
+
 }

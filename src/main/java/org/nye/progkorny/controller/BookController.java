@@ -14,6 +14,10 @@ public class BookController {
     @Autowired
     private ILibraryService libraryService;
 
+    @GetMapping("/books/allBooks")
+    public List<BookEntity> getAllBooks() {
+        return libraryService.getAllBooks();
+    }
     @PostMapping("/books")
     public BookEntity saveBook(@RequestBody @Valid BookRequest request) {
         return libraryService.saveBook(request);
@@ -39,9 +43,9 @@ public class BookController {
         return libraryService.findAllByAuthor(author);
     }
 
-    @GetMapping("/books/year/{year}")
-    public List<BookEntity> getAllBooksByYear(@PathVariable("year") int year) {
-        return libraryService.findAllByYear(year);
+    @GetMapping("/books/year/{publicationYear}")
+    public List<BookEntity> getAllBooksByYear(@PathVariable("publicationYear") int publicationYear) {
+        return libraryService.findAllByYear(publicationYear);
     }
 
     @GetMapping("books/genres/{genre}")

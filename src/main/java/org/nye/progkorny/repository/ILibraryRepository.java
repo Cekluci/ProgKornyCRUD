@@ -10,7 +10,8 @@ public interface ILibraryRepository extends CrudRepository<BookEntity, Long> {
 
     List<BookEntity> findAllByAuthor(String author);
 
-    List<BookEntity> findAllByYear(int year);
+    List<BookEntity> findAllByPublicationYear(int publicationYear);
 
     List<BookEntity> findAllByGenre(String genre);
+
 }

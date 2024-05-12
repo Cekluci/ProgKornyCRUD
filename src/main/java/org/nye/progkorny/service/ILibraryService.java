@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ILibraryService {
 
+    List<BookEntity> getAllBooks();
     BookEntity saveBook(BookRequest bookRequest);
 
     BookEntity getBookById(Long id);
@@ -17,7 +18,7 @@ public interface ILibraryService {
 
     List<BookEntity> findAllByAuthor(String author);
 
-    List<BookEntity> findAllByYear(int year);
+    List<BookEntity> findAllByYear(int publicationYear);
 
     List<BookEntity> findAllByGenre(String genre);
 
