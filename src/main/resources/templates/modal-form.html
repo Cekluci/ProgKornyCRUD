@@ -1,25 +1,33 @@
-<link rel="stylesheet" type="text/css" href="/css/modal.css">
+<link rel="stylesheet" type="text/css" href="/css/modal.css" xmlns:th="http://www.w3.org/1999/xhtml">
 <!-- modal-form.html -->
-<div id="myModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <form id="bookForm">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required><br>
-      <label for="author">Author:</label>
-      <input type="text" id="author" name="author" required><br>
-      <label for="pages">No. of Pages:</label>
-      <input type="text" id="pages" name="pages"><br>
-      <label for="publicationYear">Year of publication:</label>
-      <input type="text" id="publicationYear" name="publicationYear"><br>
-      <label for="coverUrl">Cover URL:</label>
-      <input type="text" id="coverUrl" name="coverUrl"><br>
-      <label for="genre">Genre:</label>
-      <input type="text" id="genre" name="genre"><br>
-      <label for="isOwned">Owned:</label>
-      <input type="checkbox" id="isOwned" name="isOwned">
-      <button onclick="submitForm()">Add Book</button>
-    </form>
+<div th:fragment="modalForm">
+<div id="myModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="bookForm">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required><br>
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required><br>
+          <label for="pages">No. of Pages:</label>
+          <input type="text" id="pages" name="pages"><br>
+          <label for="publicationYear">Year of publication:</label>
+          <input type="text" id="publicationYear" name="publicationYear"><br>
+          <label for="coverUrl">Cover URL:</label>
+          <input type="text" id="coverUrl" name="coverUrl"><br>
+          <label for="genre">Genre:</label>
+          <input type="text" id="genre" name="genre"><br>
+          <label for="isOwned">Owned:</label>
+          <input type="checkbox" id="isOwned" name="isOwned">
+          <button id="modalButton" onclick="submitForm()">Add Book</button>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 </div>

@@ -1,10 +1,12 @@
 package org.nye.progkorny.web;
 
 import org.nye.progkorny.entity.BookEntity;
+import org.nye.progkorny.request.BookRequest;
 import org.nye.progkorny.service.ILibraryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
